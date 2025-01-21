@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>People Entered:</h1>
-    <h2 id = "count-el">0</h2>
+    <div class = "container">
 
-    <!-- create an increment button with id = "increment-btn" -->
-    
-    <button id = "increment-btn" onclick="increment()"> INCREMENT </button>
-    <button id = "save-btn" onclick="save()"> SAVE </button>
+        <h1>Passenger Counter</h1>
 
-    <p id = "save-el">Previous Entries:</p>
-    <script src="index.js">  </script>
+        <div id="counter-display" class="counter-display">
+            <span id="count-el">0</span>
+        </div>
+
+        <div class = "buttons">
+            <button id ="increment-btn" onclick="increment()">Add Passenger</button>
+            <button id = "reset-btn" onclick="reset()">Reset</button>
+            <button id="reset-btn" onclick="save()">Save</button>
+        </div>
+        <h2>Saved Counts :</h2>
+        <p id = "save-el"></p>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

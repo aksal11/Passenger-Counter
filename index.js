@@ -1,38 +1,37 @@
-// document.getElementById("count-el").innerText= 5
+// Pass in arguments for the required HTML elements
+let countEl = document.getElementById("count-el"); // Display the count
+let incrementBtn = document.getElementById("increment-btn"); // Increment button
+let resetBtn = document.getElementById("reset-btn"); // Reset button
+let saveBtn = document.getElementById("save-btn"); //save button
+let saveEl = document.getElementById("save-el"); //scoreboard saved
 
-let countEl = document.getElementById("count-el") //pass in arguments
-let save1 = document.getElementById("save-btn")
-let saveEl = document.getElementById("save-el")
 
+// Initialize the count as zero
+let count = 0;
 
-
-
-// initialize the count as zero
-let count = 0
-// listen for clicks on the increment button - use onclick="" attribute 
-// increment the count variable when the button is clicked
-// change the count-el in the HTML to reflect the new count
-
-function increment(){
-    // console.log("clicked")
-    count += 1
-    countEl.innerText = count   // displays the count updated
-    // console.log(count)
+// Listen for clicks on the increment button - use the onclick attribute
+function increment() {
+    count += 1; // Increment the count variable
+    countEl.innerText = count; // Update the count in the HTML
 }
 
-// create a function save which logs out the count value
+// Listen for clicks on the reset button
+function reset() {
+    count = 0; // Reset the count variable
+    countEl.innerText = count; // Update the count in the HTML
+}
+
+// listen for clicks on save button
+
 function save(){
-    let countStr = count + "-"
-    // save1.innerText = count
-    // saveEl.innerText += countStr
-    saveEl.textContent += countStr
-    // console.log(count)
-    countEl.textContent = 0;
+    let countStr = count + "-"; //append the count to the scoreboard
+    saveEl.textContent += countStr //adds the count to the scoreboard
+
+    // Generating random color for the scoreboard
+    const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
+    saveEl.style.color = randomColor; //random color on the scoreboard
+
+    // reset the count every time you click save btn
     count = 0;
+    countEl.innerText = count ; //re initialized to zero
 }
-
-save()
-
-
-
-
